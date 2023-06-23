@@ -1,101 +1,101 @@
 # 100ofCode
-day 1
-day 2
-day 3
-day 4
-day 5
-day 6
-day 7
-day 8
-day 9
-day 10
-day 11
-day 12
-day 13
-day 14
-day 15
-day 16
-day 17
-day 18
-day 19
-day 20
-day 21
-day 22
-day 23
-day 24
-day 25
-day 26
-day 27
-day 28
-day 29
-day 30
-day 31
-day 32
-day 33
-day 34
-day 35
-day 36
-day 37
-day 38
-day 39
-day 40
-day 41
-day 42
-day 43
-day 44
-day 45
-day 46
-day 47
-day 48
-day 49
-day 50
-day 51
-day 52
-day 53
-day 54
-day 55
-day 56
-day 57
-day 58
-day 59
-day 60
-day 61
-day 62
-day 63
-day 64
-day 65
-day 66
-day 67
-day 68
-day 69
-day 70
-day 71
-day 72
-day 73
-day 74
-day 75
-day 76
-day 77
-day 78
-day 79
-day 80
-day 81
-day 82
-day 83
-day 84
-day 85
-day 86
-day 87
-day 88
-day 89
-day 90
-day 91
-day 92
-day 93
-day 94
-day 95
-day 96
-day 97
-day 98
-day 99
-day 100
+day 1 <br>
+day 2 <br>
+day 3 <br>
+day 4 <br>
+day 5 <br>
+day 6 <br>
+day 7 <br>
+day 8 <br>
+day 9 <br>
+day 10 <br>
+day 11 <br>
+day 12 <br>
+day 13 <br>
+day 14 <br>
+day 15 <br>
+day 16 <br>
+day 17 <br>
+day 18 <br>
+day 19 <br>
+day 20 <br>
+day 21 <br>
+day 22 <br>
+day 23 <br>
+day 24 <br>
+day 25 <br>
+day 26 <br>
+day 27 <br>
+day 28 <br>
+day 29 <br>
+day 30 <br>
+day 31 <br>
+day 32 <br>
+day 33 <br>
+day 34 <br>
+day 35 <br>
+day 36 <br>
+day 37 <br>
+day 38 <br>
+day 39 <br>
+day 40 <br>
+day 41 <br>
+day 42 <br>
+day 43 <br>
+day 44 <br>
+day 45 <br>
+day 46 <br>
+day 47 <br>
+day 48 <br>
+day 49 <br>
+day 50 <br>
+day 51 <br>
+day 52 <br>
+day 53 <br>
+day 54 <br>
+day 55 <br>
+day 56 <br>
+day 57 <br>
+day 58 <br>
+day 59 <br>
+day 60 <br>
+day 61 <br>
+day 62 <br>
+day 63 <br>
+day 64 <br>
+day 65 <br>
+day 66 <br>
+day 67 <br>
+day 68 <br>
+day 69 <br>
+day 70 <br>
+day 71 <br>
+day 72 <br>
+day 73 <br>
+day 74 <br>
+day 75 <br>
+day 76 <br>
+day 77 <br>
+day 78 <br>
+day 79 <br>
+day 80 <br>
+day 81 <br>
+day 82 <br>
+day 83 <br>
+day 84 <br>
+day 85 <br>
+day 86 <br>
+day 87 <br>
+day 88 <br>
+day 89 <br>
+day 90 <br>
+day 91 <br>
+day 92 <br>
+day 93 <br>
+day 94 <br>
+day 95 <br>
+day 96 <br>
+day 97 <br>
+day 98 <br>
+day 99 <br>
+day 100 <br>
