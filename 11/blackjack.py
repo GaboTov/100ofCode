@@ -2,6 +2,7 @@ import random
 from random import randint
 import os 
 
+
 def result(player_cards, cpu_cards):
     player_res = sum(player_cards)
     cpu_res = sum(cpu_cards)
@@ -28,26 +29,28 @@ def cpu_game(cpu_cards):
     cards = cpu_cards
     cpu_risk = random.randint(1,5)
     while sum(cpu_cards) < 21 - cpu_risk:
-        cards.append(random.randint(1,10))
+        cards.append(random.randint(1,11))
     return cards
-game = True
-while game:
-    player_cards = [randint(1, 10) for _ in range(2)]
-    cpu_cards = [randint(1, 10) for _ in range(2)]
+
+def show_hand(player_cards, cpu_cards):
     print(f"Your cards: {player_cards}, your current score: {sum(player_cards)}")
     print(f"Computer's firs card: {cpu_cards[0]}")
+game = True
+while game:
+    player_cards = [randint(1, 11) for _ in range(2)]
+    cpu_cards = [randint(1, 11) for _ in range(2)]
+    show_hand(player_cards, cpu_cards)
     get_card = str(input("Type 'y' to get another card, type 'n' to pass: "))
     cpu_final = cpu_game(cpu_cards)
     while get_card == 'y':
         player_cards.append(random.randint(1,10))
         if sum(player_cards) > 21:
             break
-        print(f"Your cards: {player_cards}, your current score: {sum(player_cards)}")
-        print(f"Computer's firs card: {cpu_cards[0]}")
+        show_hand(player_cards, cpu_cards)
         get_card = str(input("Type 'y' to get another card, type 'n' to pass: "))
     result(player_cards, cpu_final)
-    new_game = str(input("Do you want to play a game of Blackjack? Type 'y' or 'n'"))
+    new_game = str(input("Do you want to play a game of Blackjack? Type 'y' or 'n' "))
     if new_game == 'n':
-        game == False
+        game = False
     else:
         os.system('clear')
