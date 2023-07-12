@@ -15,7 +15,7 @@ Day 13 ✔️<br>
 Day 14 ✔️<br>
 Day 15 ✔️<br>
 Day 16 ✔️<br>
-Day 17 <br>
+Day 17 ✔️<br>
 Day 18 <br>
 Day 19 <br>
 Day 20 <br>
