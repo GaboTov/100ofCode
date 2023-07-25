@@ -7,6 +7,7 @@ DOWN = 270
 RIGHT = 0
 LEFT = 180
 POSITIONS = [(0,0),(-20,0),(-40,0)]
+
 class Snake:
     def __init__(self):
         self.snake = []
@@ -49,3 +50,10 @@ class Snake:
     def down(self):
         if self.head.heading() != UP:
             self.head.setheading(DOWN)
+
+    def reset(self):
+        for seg in self.snake:
+            seg.color('black')
+        self.snake.clear()
+        self.create_snake()
+        self.head = self.snake[0]
