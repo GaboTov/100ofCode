@@ -18,10 +18,10 @@ while len(guessed_states) < 50:
     answer_state = screen.textinput(title=f"{len(guessed_states)}/50 states", prompt="What's another state's name?")
     capitalized_answer = answer_state.title()
     if capitalized_answer == 'Exit':
-        missing_states = []
-        for state in list_states:
+        missing_states = [state for state in list_states if state not in guessed_states ]
+        """ for state in list_states:
             if state not in guessed_states:
-                missing_states.append(state)
+                missing_states.append(state) """
         pd.DataFrame(missing_states).to_csv("25/states_to_learn.csv")
         break
 
