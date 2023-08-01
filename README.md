@@ -26,7 +26,7 @@ Day 24 ✔️<br>
 Day 25 ✔️<br>
 Day 26 ✔️<br>
 Day 27 ✔️<br>
-Day 28 <br>
+Day 28 ✔️<br>
 Day 29 <br>
 Day 30 <br>
 Day 31 <br>
