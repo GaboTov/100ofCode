@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from random import *
 import pyperclip
+import json
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def gen_password():
     #Password Generator Project
@@ -24,20 +25,52 @@ def save_passwod():
     data_web = str(input_web.get())
     data_email = str(input_email.get())
     data_password = str(input_password.get())
-    data = f"{data_web} | {data_email} | {data_password}"
+    data = {
+        data_web:{
+            "email":data_email,
+            "password":data_password
+        }
+    }
     
     check_data = len(data_email) == 0 or len(data_password) == 0 or len(data_web) == 0
-    print(check_data)
+    
     if check_data:
         messagebox.showwarning(title='Warning!!', message="Uncompleted info")
     else:
         is_ok = messagebox.askokcancel(title=data_web, message=f"There are the details entered:\n Email: {data_email}\n Password: {data_password}\n It's ok to save?")
         if is_ok:
-            with open('29/data.txt', mode='a') as file:
-                file.write(f"{data}\n")
-            input_email.delete(0, END)
-            input_password.delete(0, END)
-            input_web.delete(0, END)
+            try:
+                with open('29/data.json', mode='r') as file:
+                    dat = json.load(file)
+            except FileNotFoundError:
+                with open('29/data.json', mode="w") as file:
+                    json.dump(data, file, indent=4)
+            else:
+                dat.update(data)
+                with open('29/data.json', mode="w") as file:
+                    json.dump(dat, file, indent=4)
+            finally:
+                    input_email.delete(0, END)
+                    input_password.delete(0, END)
+                    input_web.delete(0, END)
+
+#search functionality
+
+def find_password():
+    data_web = str(input_web.get())
+    try:
+        with open('29/data.json', mode='r') as file:
+            dat = json.load(file)
+            web = dat[data_web]
+            email = web['email']
+            passwors = web['password']
+    except FileNotFoundError:
+        messagebox.showwarning(title='Warning!!', message="No data file found")
+    else:
+        if data_web in dat:
+            messagebox.showinfo(title=f"{data_web}", message=f"email: {email} \npassword: {passwors}")
+        else:
+            messagebox.showwarning(title='Warning!!', message=f"No details for {data_web}")
 # ---------------------------- UI SETUP ------------------------------- #
 
 WIDHT = 40
@@ -57,13 +90,15 @@ email.grid(row=3,column=1)
 password = Label(text="Password",bg="white",pady=5)
 password.grid(row=4,column=1)
 #buttons 
-btn_generate_pass = Button(text="Generate password", highlightthickness=0, bg="white",command=gen_password)
+btn_generate_pass = Button(text="Generate password", highlightthickness=0, bg="white",command=gen_password,width=16)
 btn_generate_pass.grid(row=4,column=3)
-btn_add =Button(text="Add", width=WIDHT, highlightthickness=0, bg="white",pady=5, command=save_passwod)
+btn_add =Button(text="Add", highlightthickness=0, bg="white",pady=5, command=save_passwod, width=WIDHT)
 btn_add.grid(row=5,column=2,columnspan=2)
+btn_search =Button(text="search", highlightthickness=0, bg="white", width=16, command=find_password)
+btn_search.grid(row=2,column=3)
 #inputs
-input_web = Entry(width=WIDHT)
-input_web.grid(row=2,column=2,columnspan=2)
+input_web = Entry(width=20)
+input_web.grid(row=2,column=2)
 input_email = Entry(width=WIDHT)
 input_email.grid(row=3,column=2,columnspan=2)
 input_password = Entry(width=20)
