@@ -16,4 +16,5 @@ pyvenv.cfg
 pip-selfcheck.json
 .env
 birthdays.csv
+venv
 # End of https://www.toptal.com/developers/gitignore/api/venv
