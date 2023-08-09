@@ -32,20 +32,15 @@ def check_night():
     time_now = datetime.now().hour
     return(time_now > sunset or time_now < sunrise)
 
-#If the ISS is close to my current position
 def status_iss():
     response = requests.get(url="http://api.open-notify.org/iss-now.json")
     response.raise_for_status()
     data = response.json()
     iss_latitude = float(data["iss_position"]["latitude"])
     iss_longitude = float(data["iss_position"]["longitude"])
-    if MY_LAT - 5 <= iss_latitude <= MY_LAT + 5 and MY_LONG -5 <= iss_longitude <= MY_LONG +5:
-        return True
-    else:
-        return False
-# and it is currently dark
-# Then send me an email to tell me to look up.
-# BONUS: run the code every 60 seconds.
+    return (MY_LAT - 5 <= iss_latitude <= MY_LAT + 5 and MY_LONG -5 <= iss_longitude <= MY_LONG +5)
+
+
 
 while True:
     if status_iss() and check_night():
