@@ -62,7 +62,7 @@ if diff_percent > 1:
             body=txt,
             to=phone
         )
-        print(txt)
+
 else:
     print('none')
 
