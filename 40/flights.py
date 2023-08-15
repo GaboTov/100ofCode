@@ -23,8 +23,8 @@ class FlightSearch:
         data = response.json()['locations'][0]['code']
         return data
 
-    def search_flights(self, dest, ok):
-        params = {
+    def search_flights(self, dest):
+        base_params = {
             "fly_from": "BOG",
             "fly_to": dest,
             "date_from": "01/09/2023",
@@ -36,19 +36,28 @@ class FlightSearch:
             "nights_in_dst_from": 10,
             "nights_in_dst_to": 20
         }
-        if ok == "extra stop":
-            params["stop_overs"] = 1
+
+        params = dict(base_params)
+
         response = requests.get(
             url=kiwi_endpoint, params=params, headers=headers)
         try:
             data = response.json()["data"][0]
-            mini_data = {
-                "price": data["price"],
-                "dateFrom": data['route'][0]['local_departure'],
-                "dateTo": data['route'][1]['local_departure']
-            }
-            return mini_data
         except IndexError:
-            self.search_flights(ok="extra stop")
-            """ print(f"No flights found for {self.dest}.")
-            return {"price": 999999} """
+            params["stop_overs"] = 1
+            pprint(params)
+            response = requests.get(
+                url=kiwi_endpoint, params=params, headers=headers)
+            try:
+                data = response.json()["data"][0]
+                pprint(data)
+            except IndexError:
+                return {"price": 99999}
+
+        mini_data = {
+            "price": data["price"],
+            "dateFrom": data['route'][0]['local_departure'],
+            "dateTo": data['route'][1]['local_departure']
+        }
+
+        return mini_data

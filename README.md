@@ -39,7 +39,7 @@ Day 36 ✔️<br>
 Day 37 ✔️<br>
 Day 38 ✔️<br>
 Day 39 ✔️<br>
-Day 40 <br>
+Day 40 ✔️<br>
 Day 41 <br>
 Day 42 <br>
 Day 43 <br>
