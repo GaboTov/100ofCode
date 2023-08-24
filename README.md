@@ -42,9 +42,9 @@ Day 39 ✔️<br>
 Day 40 ✔️<br>
 Day 41 ✔️<br>
 Day 42 ✔️<br>
-Day 43 <br>
-Day 44 <br>
-Day 45 <br>
+Day 43 ✔️<br>
+Day 44 ✔️<br>
+Day 45 ✔️<br>
 Day 46 <br>
 Day 47 <br>
 Day 48 <br>
